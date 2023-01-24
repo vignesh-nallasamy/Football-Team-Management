@@ -1,6 +1,8 @@
 # Stage 1
 FROM node:14.15.4 as node
 WORKDIR /app
+
+COPY package.json package-lock.json ./
 COPY . .
 RUN npm install
 RUN npm run build --prod
