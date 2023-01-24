@@ -1,5 +1,5 @@
 FROM node as build
-WORKDIR /app
+WORKDIR /project
 
 RUN npm install -g @angular/cli
 COPY . .
