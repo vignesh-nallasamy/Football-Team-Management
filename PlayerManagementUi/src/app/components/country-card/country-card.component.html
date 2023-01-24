@@ -1,0 +1,11 @@
+<div class="card" (click)="navigateFromCountry()">
+<ng-container *ngIf="country">
+  <h2>{{rank+1}}</h2>
+  <img crossorigin="anonymous" src={{flagUrl}}>
+  <h3>{{country.name}}</h3>
+  <h4>Points: {{country.points}}</h4>
+</ng-container>
+  <ng-container *ngIf="!country">
+      <h1><i class="fa fa-plus"></i></h1>
+  </ng-container>
+</div>

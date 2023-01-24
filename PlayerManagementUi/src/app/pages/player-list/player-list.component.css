@@ -1,0 +1,88 @@
+.header{
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content{
+  height: 90%;
+
+}
+.team-data > *{
+  margin-top: 20px;
+}
+
+.btn { /* Blue background */
+  border: none; /* Remove borders */ /* White text */
+  height: 100%;
+  padding: 0px 16px;/* Some padding */
+  font-size: 32px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  background-color: transparent;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+
+}
+
+.flag-holder{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img{
+  width: 130px;
+  height: 65px;
+}
+
+
+.list-holder{
+  display: flex;
+  margin-top: 10px;
+}
+
+.player-list{
+  margin-top: 10px;
+  width: 50%;
+}
+
+.player-list-content::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+.player-list-content{
+  max-height: 400px;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.player{
+  width: 70%;
+  padding: 10px 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  display: flex;
+}
+
+.player:hover{
+  box-shadow: grey 1px 1px 1px 2px;
+  cursor: pointer;
+}
+.player-name{
+  width: 250px;
+}
+
+.player-list-header{
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+

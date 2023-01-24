@@ -1,0 +1,28 @@
+.header{
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.content{
+  height: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn { /* Blue background */
+  border: none; /* Remove borders */ /* White text */
+  height: 100%;
+  padding: 0px 16px;/* Some padding */
+  font-size: 32px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  background-color: transparent;
+}
+
+
+
+
+
+

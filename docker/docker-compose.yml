@@ -1,0 +1,59 @@
+version: '3.7'
+
+services:
+  ui:
+    build: ../PlayerManagementUi
+    image: sample-application-ui
+    container_name: ui
+    restart: on-failure
+    ports:
+      - 4200:80
+    depends_on:
+      service:
+        condition:
+          service_started
+    networks:
+      - sample-application
+
+  service:
+    build: ../elasticSearchApp
+    container_name: service
+    hostname: service
+    ports:
+      - 7002:7002
+    depends_on:
+      database:
+        condition:
+          service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://service:7002" ]
+    networks:
+      - sample-application
+
+
+  database:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
+    ports:
+      - 9200:9200
+    container_name: database
+    hostname: database
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9200" ]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+    networks:
+      - sample-application
+    volumes:
+      - database-data:/usr/share/elasticsearch/data
+
+networks:
+  sample-application:
+    name: sample-application
+    driver: bridge
+
+volumes:
+  database-data:

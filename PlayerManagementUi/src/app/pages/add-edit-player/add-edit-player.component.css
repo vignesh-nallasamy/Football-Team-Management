@@ -1,0 +1,68 @@
+.header{
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+
+}
+
+.content{
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn { /* Blue background */
+  border: none; /* Remove borders */ /* White text */
+  height: 100%;
+  padding: 0px 16px;/* Some padding */
+  font-size: 32px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  background-color: transparent;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+
+}
+
+.form{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form>*{
+  margin-top: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.form-button{
+  width: 20%;
+  padding:8px 8px;/* Some padding */
+  font-size: 24px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  margin-left: 40%;
+}
+
+
+

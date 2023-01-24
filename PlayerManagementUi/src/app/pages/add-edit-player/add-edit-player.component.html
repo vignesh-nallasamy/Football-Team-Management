@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="header">
+  <button (click)="goBack()" class="btn"><i class="fa fa-arrow-left"></i></button>
+  <h2>{{player.id ? "EDIT PLAYER":"CREATE PLAYER"}}</h2>
+  <div></div>
+</div>
+
+<div  class="content">
+  <div class="form">
+    <div>
+      <label>Player Name</label>
+      <input type="text" [(ngModel)]="player.name" >
+    </div>
+    <div>
+      <label>Position</label>
+      <select [(ngModel)]="player.position">
+        <option *ngFor="let position of positions" [value]="position" >{{position}}</option>
+      </select>
+    </div>
+    <div>
+      <label>Goals</label>
+      <input type="number" [(ngModel)]="player.goals">
+    </div>
+    <div>
+      <label>Assists</label>
+      <input type="number"[(ngModel)]="player.assists">
+    </div>
+    <div>
+      <label>Saves</label>
+      <input type="number" [(ngModel)]="player.saves">
+    </div>
+
+    <button  (click)="createPlayer()" class="form-button">{{player.id? "Update":"Create"}}</button>
+
+  </div>
+</div>

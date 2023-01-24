@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="header">
+  <button (click)="goToCountryDetails()" class="btn"><i class="fa fa-arrow-left"></i></button>
+  <h2>{{player.name}}</h2>
+<div>
+  <button (click)="goToEditPlayer()" class="btn"><i class="fa fa-edit"></i></button>
+  <button (click)="deletePlayer()" class="btn"><i class="fa fa-trash"></i></button>
+</div>
+</div>
+
+<div  class="content">
+  <div class="flag-holder">
+    <img crossorigin="anonymous" src={{flagUrl}}>
+  </div>
+<div class="data-holder">
+  <div>Country: {{player.country}}</div>
+  <div>Position: {{player.position}}</div>
+  <div>Goals: {{player.goals}}</div>
+  <div>Assists: {{player.assists}}</div>
+  <div>Saves:{{player.saves}}</div>
+</div>
+
+</div>

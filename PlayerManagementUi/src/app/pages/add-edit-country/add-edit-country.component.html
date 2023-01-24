@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="header">
+  <button (click)="goToRankings()" class="btn"><i class="fa fa-arrow-left"></i></button>
+  <h2>{{country.id?"EDIT COUNTRY":"CREATE COUNTRY"}}</h2>
+  <div></div>
+</div>
+
+<div  class="content">
+ <div class="form">
+<div>
+  <label>Country Name</label>
+  <input type="text" [(ngModel)]="country.name">
+</div>
+   <div>
+     <label>Points</label>
+     <input type="number" [(ngModel)]="country.points" >
+   </div>
+  <div>
+    <label>Trophies</label>
+    <input type="text" [(ngModel)]="trophy">
+  </div>
+   <button class="form-button" (click)="addToTrophies()"><i class="fa fa-arrow-down"></i></button>
+<!--   <ul>-->
+<!--     <li *ngFor="let trophy of country.trophies">-->
+<!--       {{trophy}}-->
+<!--     </li>-->
+<!--   </ul>-->
+   <textarea readonly [rows]="5" [(ngModel)]="trophyString"></textarea>
+   <button  (click)="createCountry()" class="form-button">{{country.id?"Update":"Create"}}</button>
+
+ </div>
+</div>

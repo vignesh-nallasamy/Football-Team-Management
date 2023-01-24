@@ -1,0 +1,45 @@
+version: "3.7"
+services:
+  restservice:
+    build: .
+    ports:
+      - 7002:7002
+    networks:
+      - rest-network
+    depends_on:
+      vickyelastic:
+        condition:
+          service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:7002" ]
+    restart: on-failure
+    environment:
+      - ELASTICSEARCH_HOST=vickyelastic
+      - ELASTICSEARCH_PORT=9200
+
+  vickyelastic:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
+    ports:
+      - 9200:9200
+    container_name: vickyelastic
+    hostname: vickyelastic
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9200" ]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+    networks:
+      - rest-network
+    volumes:
+      - vickyelastic-data:/usr/share/elasticsearch/data
+
+volumes:
+  vickyelastic-data:
+
+networks:
+  rest-network:
+    name: rest-network
+    driver: bridge
