@@ -1,10 +1,9 @@
-FROM node as build
-WORKDIR /project
-
-RUN npm install -g @angular/cli
+# Stage 1
+FROM node:14.15.4 as node
+WORKDIR /app
 COPY . .
 RUN npm install
-RUN ng build
-
-FROM nginx as runtime
-COPY --from=build /app/dist/player-management-ui /usr/share/nginx/html
+RUN npm run build --prod
+# Stage 2
+FROM nginx:alpine
+COPY --from=node /app/dist/angular-app /usr/share/nginx/html
