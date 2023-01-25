@@ -7,7 +7,7 @@ on:
       - 'elasticSearchApp/**'
 
 jobs:
-  run-all-tests:
+  build_jar_and_image_and_push_to_registry:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
