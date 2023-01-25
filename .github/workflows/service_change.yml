@@ -45,3 +45,7 @@ jobs:
           file: ./elasticSearchApp/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/service:latest
+      -
+        name: dockerupdate
+        working-directory: docker/
+        run: docker compose down
