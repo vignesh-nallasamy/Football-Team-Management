@@ -25,4 +25,5 @@ jobs:
           maven-version: 3.8.2
 
       - name: build the app
+        working-directory: elasticSearchApp/
         run: mvn clean install
