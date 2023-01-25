@@ -46,6 +46,6 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/service:latest
       -
-        name: dockerupdate
+        name: docker-compose-down
         working-directory: docker/
         run: docker compose down
