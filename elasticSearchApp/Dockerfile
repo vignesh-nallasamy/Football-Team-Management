@@ -1,5 +1,5 @@
 FROM openjdk:17-jdk-slim
-COPY /target /app
-WORKDIR /app
+COPY /target /directory
+WORKDIR /directory
 CMD java -jar elasticSearchApp-*.jar
 
