@@ -2,8 +2,7 @@ version: '3.7'
 
 services:
   ui:
-    build: ../PlayerManagementUi
-    image: sample-application-ui
+    image: vigneshnallasamy/ui
     container_name: ui
     restart: on-failure
     ports:
@@ -16,7 +15,7 @@ services:
       - sample-application
 
   service:
-    build: ../elasticSearchApp
+    image: vigneshnallasamy/service
     container_name: service
     hostname: service
     ports:
