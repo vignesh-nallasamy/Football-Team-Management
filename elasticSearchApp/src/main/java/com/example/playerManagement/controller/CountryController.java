@@ -16,7 +16,7 @@ public class CountryController {
 
     @RequestMapping(method = RequestMethod.GET,value = "/")
     public String  sayHello(){
-        return "Hello Friends";
+        return "Hello Countries";
     }
 
     @RequestMapping(method = RequestMethod.GET,value = "/countries")
