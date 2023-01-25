@@ -6,4 +6,4 @@ RUN npm install
 RUN npm run build --prod
 # Stage 2
 FROM nginx:alpine
-COPY --from=node /apps/dist/angular-app /usr/share/nginx/html
+COPY --from=node /apps/dist/player-management-ui /usr/share/nginx/html
