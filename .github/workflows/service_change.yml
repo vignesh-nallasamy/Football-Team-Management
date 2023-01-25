@@ -1,41 +1,28 @@
-name: Java CI
-
+name: build and push into docker
 on:
   push:
     branches:
       - "main"
     paths:
       - 'elasticSearchApp/**'
-jobs:
-  build:
-    runs-on: ubuntu-latest
 
+jobs:
+  run-all-tests:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK 17
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Java
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'temurin'
-      - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots package
-      -
-        name: Login to Docker Hub
-        uses: docker/login-action@v2
+          distribution: 'zulu'
+
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4.4
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-      -
-        name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          file: ./elasticSearchApp/Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/service:latest
-  
-  
-  
+          maven-version: 3.8.2
+
+      - name: build the app
+        run: mvn clean install
