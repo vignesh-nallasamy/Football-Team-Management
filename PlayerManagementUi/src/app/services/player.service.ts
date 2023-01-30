@@ -7,7 +7,7 @@ import {Player} from "../models/player";
   providedIn: 'root'
 })
 export class PlayerService {
-  URL:string ="http://daeirnd62546:7002/"
+  URL:string ="http://10.22.125.109:7002/"
   constructor(
     private http : HttpClient
   ) { }
