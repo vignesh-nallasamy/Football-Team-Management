@@ -25,7 +25,7 @@ jobs:
 
       - name: running the unit tests
         working-directory: PlayerManagementUi/
-        run: npm test -- --watch=false --browsers=ChromeHeadless
+        run: npm test -- --watch=false
 
       - name: building the application
         working-directory: PlayerManagementUi/
