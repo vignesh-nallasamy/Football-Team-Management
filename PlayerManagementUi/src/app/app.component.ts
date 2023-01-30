@@ -9,7 +9,6 @@ export class AppComponent implements OnInit {
   title = 'PlayerManagementUi';
 
   constructor(
-    private countryService : CountryServiceService
   ) {}
 
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CountryServiceService} from "../../services/country-service.service";
 import {Country} from "../../models/country";
-import {Route, Router} from "@angular/router";
+import { Router} from "@angular/router";
 
 @Component({
   selector: 'app-country-details',
