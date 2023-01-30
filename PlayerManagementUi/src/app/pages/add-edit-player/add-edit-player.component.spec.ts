@@ -19,6 +19,7 @@ let routerMock = {}
       providers:[{provide:PlayerService,useValue:playerServiceMock}]
     })
     .compileComponents();
+    window.history.pushState({ player: ''}, '', '');
     fixture = TestBed.createComponent(AddEditPlayerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
