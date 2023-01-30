@@ -25,10 +25,11 @@ jobs:
 
       - name: running the unit tests
         working-directory: PlayerManagementUi/
-        run: npm run test
+        run: npm test -- --watch=false --browsers=ChromeHeadless
+
       - name: building the application
         working-directory: PlayerManagementUi/
-        run: npm run build
+        run: npm run build --prod
       -
         name: Login to Docker Hub
         uses: docker/login-action@v2
