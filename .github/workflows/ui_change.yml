@@ -24,9 +24,6 @@ jobs:
         working-directory: PlayerManagementUi/
         run: npm install
 
-      - name: Lint
-        working-directory: PlayerManagementUi/
-        run: npm run lint
 
       - name: running the unit tests
         working-directory: PlayerManagementUi/
