@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
 export class CountryServiceService {
   constructor(private http : HttpClient) {
   }
-  URL:string = "http://daeirnd62546:7200/";
+  URL:string = "http://daeirnd62546:7002/";
   headers = new HttpHeaders().set('content-type', 'application/json')
 
   getAllCountries():Observable<any>{
