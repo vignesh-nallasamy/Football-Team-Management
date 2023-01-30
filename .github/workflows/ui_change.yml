@@ -31,3 +31,15 @@ jobs:
           file: ./PlayerManagementUi/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ui:latest
+      -
+        name: shutting down previous image
+        working-directory: docker/
+        run: docker compose down
+      -
+        name: pulling latest changes
+        working-directory: docker/
+        run: docker compose pull
+      -
+        name: starting the latest images
+        working-directory: docker/
+        run: docker compose up -d
