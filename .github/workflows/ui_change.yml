@@ -1,12 +1,12 @@
 name: ui_change_triggered
 
 on:
-  push:
-    branches:
-      - "main"
+  pull_request:
+    branches: [ main ]
     paths:
       - 'PlayerManagementUi/**'
-
+    
+    
 jobs:
   build:
     runs-on: self-hosted
