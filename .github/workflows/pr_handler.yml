@@ -10,7 +10,6 @@ env:
 
 jobs:
   Detect-Changes-Compile:
-    if: '! github.event.pull_request.draft'
     runs-on: self-hosted
     steps:
       - name: Checkout Code
