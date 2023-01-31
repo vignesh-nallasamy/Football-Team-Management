@@ -10,6 +10,7 @@ env:
 
 jobs:
   Detect-Changes-Compile:
+    if: '! github.event.pull_request.draft'
     runs-on: self-hosted
     steps:
       - name: Checkout Code
@@ -35,8 +36,9 @@ jobs:
 
 
   running_unit_tests_for_service:
-    if: ${{needs.Detect-Changes-Compile.outputs.serverChanged == 'false'}}
+    if: ${{needs.Detect-Changes-Compile.outputs.serverChanged == 'true'}}
     runs-on: self-hosted
+    needs: Detect-Changes-Compile
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -63,6 +65,7 @@ jobs:
   running_unit_tests_for_ui:
     if: ${{needs.Detect-Changes-Compile.outputs.uiChanged == 'true'}}
     runs-on: self-hosted
+    needs: Detect-Changes-Compile
     steps:
       - name: Checkout
         uses: actions/checkout@v3
