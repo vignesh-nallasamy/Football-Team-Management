@@ -15,7 +15,7 @@ public class ElasticSearchClientConfig {
     public RestClient getRestClient(){
         RestClient restClient =
                 RestClient.builder(
-                new HttpHost("database",9200))
+                new HttpHost("daeirnd62546",9200))
                 .build();
 
         return restClient;
