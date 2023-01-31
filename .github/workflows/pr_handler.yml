@@ -36,7 +36,7 @@ jobs:
 
 
   running_unit_tests_for_service:
-    if: ${{needs.Detect-Changes-Compile.outputs.serverChanged == 'true'}}
+    if: ${{needs.Detect-Changes-Compile.outputs.serverChanged == 'false'}}
     runs-on: self-hosted
     steps:
       - name: Checkout
