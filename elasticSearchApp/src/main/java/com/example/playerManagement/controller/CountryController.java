@@ -2,6 +2,7 @@ package com.example.playerManagement.controller;
 
 import com.example.playerManagement.model.Country;
 import com.example.playerManagement.service.PlayerManagementService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,12 +26,12 @@ public class CountryController {
     }
 
     @RequestMapping(method = RequestMethod.POST,value = "/countries")
-    public Country  createCountry(@RequestBody Country country){
+    public Country  createCountry(@Valid @RequestBody Country country){
         return this.service.createCountry(country);
     }
 
     @RequestMapping(method = RequestMethod.PUT,value = "/countries")
-    public Country  updateCountry(@RequestBody Country country){
+    public Country  updateCountry(@Valid @RequestBody Country country){
         return this.service.updateCountry(country);
     }
 

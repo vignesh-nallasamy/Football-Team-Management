@@ -3,6 +3,7 @@ package com.example.playerManagement.controller;
 import com.example.playerManagement.model.Country;
 import com.example.playerManagement.model.Player;
 import com.example.playerManagement.service.PlayerManagementService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +23,7 @@ public class PlayerController {
     }
 
     @RequestMapping(method = RequestMethod.POST,value = "/players")
-    public Player createPlayer(@RequestBody Player player){
+    public Player createPlayer(@Valid @RequestBody Player player){
         return  this.service.createPlayer(player);
     }
 

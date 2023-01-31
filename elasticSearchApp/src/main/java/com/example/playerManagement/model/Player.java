@@ -1,5 +1,7 @@
 package com.example.playerManagement.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
@@ -11,10 +13,13 @@ public class Player {
     @Id
     private String id;
     @Field(type = FieldType.Text,name = "name")
+    @NotBlank(message = "Player name shouldn't be empty")
     private String name;
     @Field(type = FieldType.Text,name = "country")
+    @NotBlank(message = "Country name shouldn't be empty")
     private String country;
     @Field(type = FieldType.Text,name = "position")
+    @NotNull(message = "Invalid field position")
     private String position;
     @Field(type = FieldType.Integer,name = "goals")
     private int goals;

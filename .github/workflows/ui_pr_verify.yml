@@ -8,7 +8,7 @@ on:
     
     
 jobs:
-  build:
+  ui_pr_verification:
     runs-on: self-hosted
     steps:
       -
