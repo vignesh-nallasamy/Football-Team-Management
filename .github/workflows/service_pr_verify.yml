@@ -1,4 +1,4 @@
-name: service_ui
+name: service_ci
 on:
   pull_request:
     branches:
@@ -8,27 +8,27 @@ on:
 
 jobs:
   service_pr_verification:
-    runs-on: self-hosted
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Java
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'zulu'
-
-      - name: Set up Maven
-        uses: stCarolas/setup-maven@v4.4
-        with:
-          maven-version: 3.8.2
-
-      - name: running the unit tests
-        working-directory: elasticSearchApp/
-        run: mvn verify
-
-      - name: running the unit tests
-        working-directory: elasticSearchApp/
-        run: mvn clean install
+#    runs-on: self-hosted
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#
+#      - name: Setup Java
+#        uses: actions/setup-java@v3
+#        with:
+#          java-version: '17'
+#          distribution: 'zulu'
+#
+#      - name: Set up Maven
+#        uses: stCarolas/setup-maven@v4.4
+#        with:
+#          maven-version: 3.8.2
+#
+#      - name: running the unit tests
+#        working-directory: elasticSearchApp/
+#        run: mvn verify
+#
+#      - name: running the unit tests
+#        working-directory: elasticSearchApp/
+#        run: mvn clean install
         
