@@ -17,7 +17,7 @@ public class CountryController {
 
     @RequestMapping(method = RequestMethod.GET,value = "/")
     public String  sayHello(){
-        return "welcome to player management App";
+        return "Hi, From Rest service";
     }
 
     @RequestMapping(method = RequestMethod.GET,value = "/countries")

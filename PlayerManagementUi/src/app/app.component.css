@@ -5,8 +5,7 @@
 .outer-container{
   width: 100%;
   height: 100vh;
-  background-color: lightgoldenrodyellow;
-  /*background-color: lightcoral;*/
+background-color: #fffff9;
   display: flex;
   justify-content: center;
   align-items: center;
